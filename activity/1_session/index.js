@@ -18,3 +18,19 @@ for (let i = 1; i <= 100; i++) {
 
 // Ejercicio 6
 
+const formatter = {
+    prefix: "Hello ",
+    append: function(str) {
+      console.log(this.prefix + str);
+    }
+};
+
+formatter.append("World");
+
+Object.setPrototypeOf(formatter, {
+    toLowerString: function(str) {
+      console.log(str.toLowerCase());
+    }
+});
+
+formatter.toLowerString("I'm Carlos");
